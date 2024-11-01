@@ -1,135 +1,164 @@
 import streamlit as st
 
 # Custom CSS for styling
-st.markdown(
-    """
+st.markdown("""
     <style>
     body {
+        background-color: #f9f9f9;
         font-family: 'Arial', sans-serif;
-        margin: 0;
-        padding: 0;
-        scroll-behavior: smooth;
     }
-    .hero {
-        background: url('https://your-hero-image-url.jpg') no-repeat center center/cover;
-        height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        text-align: center;
+    h1, h2, h3 {
+        color: #333;
     }
     h1 {
-        font-size: 3rem;
-        margin-bottom: 0;
+        text-align: center;
+        margin-top: 20px;
+        font-size: 3em;
     }
     h2 {
-        font-size: 2rem;
-        color: #f39c12;
+        margin-top: 40px;
+        border-bottom: 2px solid #FF5733;
+    }
+    p {
+        line-height: 1.6;
+    }
+    .contact-info {
+        text-align: center;
+        margin-bottom: 40px;
+        font-size: 1.2em;
     }
     .section {
-        padding: 60px 20px;
-        text-align: center;
-    }
-    .card {
-        border: 1px solid #ddd;
-        border-radius: 8px;
+        margin: 40px 0;
         padding: 20px;
-        margin: 20px;
-        transition: transform 0.2s;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
-    .card:hover {
-        transform: scale(1.05);
+    .button {
+        background-color: #FF5733;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
     }
-    .fade-in {
-        opacity: 0;
-        animation: fadeIn 1s forwards;
-    }
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-        }
-        to {
-            opacity: 1;
-        }
+    .button:hover {
+        background-color: #C70039;
     }
     </style>
-    """,
-    unsafe_allow_html=True
-)
+""", unsafe_allow_html=True)
 
-# Smooth scrolling links
-st.sidebar.title("Navigation")
-st.sidebar.markdown("[Introduction](#introduction)")
-st.sidebar.markdown("[Experience](#experience)")
-st.sidebar.markdown("[Education](#education)")
-st.sidebar.markdown("[Projects](#projects)")
-st.sidebar.markdown("[Certifications](#certifications)")
-
-# Introduction Section
-st.markdown("<div id='introduction' class='hero'><h1>NANDINI KUPPALA</h1><h2>Your Catchy Tagline Here</h2></div>", unsafe_allow_html=True)
+# Header
+st.title("NANDINI KUPPALA")
+st.markdown("<div class='contact-info'>+91 7569056212 | knandini7816@gmail.com | [LinkedIn](#) | [GitHub](#) | [LeetCode](#) | [GeeksForGeeks](#) | [HackerRank](#)</div>", unsafe_allow_html=True)
 
 # Experience Section
-st.markdown("<div id='experience' class='section fade-in'><h2>Experience</h2></div>", unsafe_allow_html=True)
-experience_data = [
-    {"title": "Campus Ambassador", "company": "E-Cell IIT Bombay", "duration": "August 2024 – Present", "description": "Led entrepreneurial initiatives and organized workshops."},
-    {"title": "Founder & Project Lead", "company": "Nurture Sync", "duration": "June 2024 – Present", "description": "Developed a health management platform."},
-    {"title": "Research Intern", "company": "Dr. Ramesh Sivanpillai", "duration": "October 2023 – Present", "description": "Worked on machine learning projects."},
-    {"title": "Intern", "company": "Baavlibuch", "duration": "February 2024 – April 2024", "description": "Participated in all stages of SDLC."},
-]
-for job in experience_data:
-    st.markdown(f"""
-    <div class='card fade-in'>
-        <h3>{job['title']} at {job['company']}</h3>
-        <p>{job['duration']}</p>
-        <p>{job['description']}</p>
-    </div>
-    """, unsafe_allow_html=True)
+st.markdown("<div class='section'>", unsafe_allow_html=True)
+st.header("Experience")
+st.markdown("""
+**Campus Ambassador**  
+*E-Cell IIT Bombay*  
+August 2024 – Present  
+- Led entrepreneurial initiatives in collaboration with E-Cell IIT Bombay, fostering innovation and startups among students.
+- Organized workshops, events, and competitions that reached over 200+ participants, promoting entrepreneurship in college.
+- Coordinated with teams to ensure smooth execution of events and increased student engagement by 30%.
 
-# Education Section
-st.markdown("<div id='education' class='section fade-in'><h2>Education</h2></div>", unsafe_allow_html=True)
-education_data = [
-    {"degree": "Bachelor of Engineering in Artificial Intelligence", "institution": "Amrita Vishwa Vidyapeetham", "duration": "2022 – 2026", "cgpa": "CGPA: 7.91"},
-]
-for edu in education_data:
-    st.markdown(f"""
-    <div class='card fade-in'>
-        <h3>{edu['degree']}</h3>
-        <p>{edu['institution']} ({edu['duration']})</p>
-        <p>{edu['cgpa']}</p>
-    </div>
-    """, unsafe_allow_html=True)
+**Founder & Project Lead**  
+*Nurture Sync - in collaboration with NASSCOM Foundation*  
+June 2024 – Present  
+- Developed a comprehensive health management platform aimed at individuals managing thyroid and diabetes.
+- Secured mentorship and funding through ThingQbator-NASSCOM Foundation.
+- Led a team of 4 developers to create features like medical report analysis, AI-driven personalized health recommendations, and an AI chatbot for patient support.
+- Collaborated with healthcare professionals to enhance the accuracy and relevance of the platform’s insights.
+
+**Research Experience: Machine Learning, Remote Sensing, Image Processing**  
+*Dr. Ramesh Sivanpillai*  
+October 2023 – Present  
+- Worked on real-time machine learning projects using LANDSAT data to monitor rangeland vegetation.
+- Improved model accuracy by 15% using ensemble techniques, contributing to a 30% increase in profitability for Wyoming farmers.
+- Collaborated with experts from the University of Wyoming and Amrita School of AI to analyze and interpret large datasets.
+
+**Security and Software Testing Intern**  
+*Baavlibuch*  
+February 2024 – April 2024  
+- Participated in all stages of the Software Development Lifecycle (SDLC), including analysis, design, development, and testing of a healthcare chatbot.
+- Automated testing procedures, reducing manual testing effort by 40% and accelerating test case execution by 20%.
+- Debugged and fixed critical application bugs, enhancing stability and performance by 25%.
+- Implemented and managed testing environments in Linux, significantly improving security and data protection.
+""", unsafe_allow_html=True)
+st.markdown("</div>", unsafe_allow_html=True)
 
 # Projects Section
-st.markdown("<div id='projects' class='section fade-in'><h2>Projects</h2></div>", unsafe_allow_html=True)
-projects_data = [
-    {"title": "Cash Flow Minimizer", "description": "Developed a web application for financial optimization.", "image": "https://via.placeholder.com/150"},
-    {"title": "Real-Time DeepFake Detection", "description": "Built a Chrome extension for detecting deep fakes.", "image": "https://via.placeholder.com/150"},
-    {"title": "Marine Vision: Oil Spill Detection", "description": "Developed a system for early oil spill detection.", "image": "https://via.placeholder.com/150"},
-]
-for project in projects_data:
-    st.markdown(f"""
-    <div class='card fade-in'>
-        <h3>{project['title']}</h3>
-        <img src='{project['image']}' alt='Project Image' style='width:100%; height:auto; border-radius: 8px;'>
-        <p>{project['description']}</p>
-    </div>
-    """, unsafe_allow_html=True)
+st.markdown("<div class='section'>", unsafe_allow_html=True)
+st.header("Projects")
+st.markdown("""
+**[Cash Flow Minimizer using Graph Data Structure](#)**  
+- Developed a web application for financial optimization, minimizing transaction costs using graph data structures.
+- Designed an algorithm that reduced transaction volume by 30%, effectively lowering operational costs.
+
+**[Real-Time DeepFake Detection Chrome Extension](#)**  
+- Built a Chrome extension for real-time detection of deep fake images and videos.
+- Integrated backend machine learning algorithms, achieving 80% detection accuracy.
+
+**Marine Vision: Early Warning System for Oil Spill Detection**  
+- Developed an early warning system to detect oil spills using Synthetic Aperture Radar (SAR) imagery and Automatic Identification System (AIS) data.
+- Utilized machine learning algorithms to classify oil spills with high accuracy and minimize false positives.
+- Integrated AIS data to monitor vessel movements and correlate them with potential spill events.
+- Enhanced environmental monitoring capabilities, significantly improving response times to oil spill incidents.
+""", unsafe_allow_html=True)
+st.markdown("</div>", unsafe_allow_html=True)
+
+# Education Section
+st.markdown("<div class='section'>", unsafe_allow_html=True)
+st.header("Education")
+st.markdown("""
+**Bachelor of Engineering in Artificial Intelligence**  
+*Amrita Vishwa Vidyapeetham, Coimbatore, Tamil Nadu*  
+2022 – 2026  
+- CGPA: 7.91
+""", unsafe_allow_html=True)
+st.markdown("</div>", unsafe_allow_html=True)
+
+# Skills Section
+st.markdown("<div class='section'>", unsafe_allow_html=True)
+st.header("Skills")
+st.markdown("""
+- **Programming Languages:** Python, Java, JavaScript, SQL.
+- **Web Development:** HTML5, CSS, Node.js, React, Flask, RESTful APIs.
+- **Mobile App Development:** Flutter.
+- **Database Management:** PostgreSQL, MongoDB, SQL.
+- **DevOps Tools:** Git, Docker, Linux.
+- **Testing:** Automated Testing, Software and Security Testing, Selenium.
+- **Cloud Technologies:** Azure.
+- **AI & Machine Learning:** Deep Learning, Natural Language Processing, Generative AI, Computer Vision.
+- **Methodologies:** Agile Development, Scrum.
+- **Soft Skills:** Analytical Thinking, Adaptability, Problem-Solving, Effective Communication, Team Collaboration, Quick Learner.
+""", unsafe_allow_html=True)
+st.markdown("</div>", unsafe_allow_html=True)
+
+# Achievements Section
+st.markdown("<div class='section'>", unsafe_allow_html=True)
+st.header("Achievements")
+st.markdown("""
+- Research Internship: Enhanced profitability potential for Wyoming farmers by delivering actionable insights.
+- Presented research work titled ”Mapping Vegetation Dynamics in Wyoming: A Multi-Temporal Analysis using Landsat NDVI and Clustering” at the ASPRS International Technical Symposium 2024.
+- Solved 250+ Data Structures and Algorithms (DSA) problems.
+""", unsafe_allow_html=True)
+st.markdown("</div>", unsafe_allow_html=True)
 
 # Certifications Section
-st.markdown("<div id='certifications' class='section fade-in'><h2>Certifications</h2></div>", unsafe_allow_html=True)
-certifications_data = [
-    {"title": "Python Basic", "issuer": "Hacker Rank"},
-    {"title": "Object Oriented Programming in Java", "issuer": "Duke University (Coursera)"},
-    {"title": "AI Course Series", "issuer": "Infosys Springboard"},
-]
-for cert in certifications_data:
-    st.markdown(f"""
-    <div class='card fade-in'>
-        <h3>{cert['title']}</h3>
-        <p>{cert['issuer']}</p>
-    </div>
-    """, unsafe_allow_html=True)
+st.markdown("<div class='section'>", unsafe_allow_html=True)
+st.header("Certifications")
+st.markdown("""
+- Python Basic : Hacker Rank
+- Problem Solving Basic : Hacker Rank
+- Object Oriented Programming in Java - Specialization Duke University (Coursera)
+- Artificial Intelligence Course Series (118 hr length) : Infosys Springboard
+- Data Structures and Performance : Coursera
+- Agile Scrum in Practice : Infosys Springboard
+""", unsafe_allow_html=True)
+st.markdown("</div>", unsafe_allow_html=True)
 
 # Footer
-st.markdown("<footer class='section'>Contact: +91 7569056212 | Email: knandini7816@gmail.com</footer>", unsafe_allow_html=True)
+st.markdown("<footer style='text-align: center; padding: 20px;'><p>© 2024 Nandini Kuppala. All Rights Reserved.</p></footer>", unsafe_allow_html=True)
